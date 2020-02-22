@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Convert Markdown</title>
+    <script>
+    window.addEventListener("load", eventWindowLoaded, false);
+    function eventWindowLoaded() {
+      //
+      // Convert Sheet to Markdown
+      //
+      var sheet2mdbt = document.getElementById("sheet2md");
+      sheet2mdbt.addEventListener("click", eventSheet2MdClicked, false);
+
+      function eventSheet2MdClicked() {
+        var sheet = document.getElementById("sheet");
+        var md = document.getElementById("md");
+        var mdText = convertSheet2Md(sheet.value);
+        md.value = mdText;
+      }
+
+      function convertSheet2Md(input) {
+        return input;
+      }
+
+      //
+      // Convert Markdown to Sheet
+      //
+      var md2sheetbt = document.getElementById("md2sheet");
+      md2sheetbt.addEventListener("click", eventMd2SheetClicked, false);
+
+      function eventMd2SheetClicked() {
+        var sheet = document.getElementById("sheet");
+        var md = document.getElementById("md");
+        var sheetText = convertMd2Sheet(md.value);
+        sheet.value = sheetText;
+      }
+
+      function convertMd2Sheet(input) {
+        return input;
+      }
+    }
+    </script>
+  </head>
+  <body>
+  <h1>Convert Spread Sheet to Mardown Table</h1>
+  <textarea id="sheet" placeholder="sheet"></textarea>
+  <textarea id="md" placeholder="markdown"></textarea>
+  <br>
+  <button id="sheet2md">spread sheet -> Markdown</button>
+  <button id="md2sheet">spread sheet <- Markdown</button>
+  </body>
+</html>
